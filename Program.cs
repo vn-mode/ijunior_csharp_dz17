@@ -8,26 +8,28 @@ namespace vn_mode_csharp_dz17
         {
             int randomNumber;
             int degree = 1;
-            int dynamicNumber;
-            int sourceNumber = 2;
+            int result;
+            int ourNumber = 2;
+            int minimumRandomNumber = 1;
+            int maximumRandomNumber = 100;
 
-            dynamicNumber = sourceNumber;
-            Random rand = new Random();
-            randomNumber = rand.Next(1, 100);
+            result = ourNumber;
+            Random random = new Random();
+            randomNumber = random.Next(minimumRandomNumber, maximumRandomNumber);
 
-            for (int i = 1; dynamicNumber < randomNumber; i = i * sourceNumber)
+            for (int i = 1; result < randomNumber; i = i * ourNumber)
             {
-                dynamicNumber *= sourceNumber;
+                result *= ourNumber;
                 degree++;
             }
 
-            if (randomNumber == dynamicNumber)
+            if (randomNumber == result)
             {
-                dynamicNumber *= sourceNumber;
+                result *= ourNumber;
                 degree++;
             }
-            
-            Console.WriteLine($"Исходное число: {randomNumber}\n{sourceNumber} в степени: {degree}\nРезультат возведения в степень: {dynamicNumber}");
+
+            Console.WriteLine($"Исходное число: {randomNumber}\n{ourNumber} в степени: {degree}\nРезультат возведения в степень: {result}");
 
         }
     }
